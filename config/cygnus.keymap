@@ -14,7 +14,8 @@
 // - gamepad layers (base / L1 / L2) with combo + keys to toggle on/off
 // - mouse (pointer) layer on Z and /, like QMK POINTER_MOD:
 //     n = left, u = up, i = right, , = down
-// - the extra 6th thumb key (charybdis keymap only used 5) is a plain DEL
+// - tap the extra 6th thumb (charybdis keymap only used 5) for DEL; hold it
+//   for the BT layer (profile select on z x c v, clear bonds on b)
 
 #define QWERTY  0
 #define COLEMAK 1
@@ -27,6 +28,7 @@
 #define GAMEPAD 8
 #define GP_L1   9
 #define GP_L2   10
+#define BT      11
 
 / {
     behaviors {
@@ -95,7 +97,7 @@
     &kp Q        &kp W       &kp E        &kp R         &kp T  &kp Y  &kp U         &kp I        &kp O       &kp P
     &hmp LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G  &kp H  &hm LSHIFT J  &hm LCTRL K  &hm LALT L  &hmp LGUI SEMI
     &lt MOUSE Z  &kp X       &kp C        &kp V         &kp B  &kp N  &kp M         &kp COMMA    &kp DOT     &lt MOUSE FSLH
-                             &lt MEDIA ESC  &lt NAV SPACE  &lt FUN TAB    &lt SYM RET    &lt NUM BSPC   &kp DEL
+                             &lt MEDIA ESC  &lt NAV SPACE  &lt FUN TAB    &lt SYM RET    &lt NUM BSPC   &lt BT DEL
             >;
         };
 
@@ -104,7 +106,7 @@
     &kp Q        &kp W       &kp F        &kp P         &kp G  &kp J  &kp L         &kp U        &kp Y       &kp SEMI
     &hmp LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T  &kp D  &kp H  &hm LSHIFT N  &hm LCTRL E  &hm LALT I  &hmp LGUI O
     &lt MOUSE Z  &kp X       &kp C        &kp V         &kp B  &kp K  &kp M         &kp COMMA    &kp DOT     &lt MOUSE FSLH
-                             &lt MEDIA ESC  &lt NAV SPACE  &lt FUN TAB    &lt SYM RET    &lt NUM BSPC   &kp DEL
+                             &lt MEDIA ESC  &lt NAV SPACE  &lt FUN TAB    &lt SYM RET    &lt NUM BSPC   &lt BT DEL
             >;
         };
 
@@ -148,9 +150,9 @@
 
         media_layer {
             bindings = <
-    &none       &none       &none         &none         &none        &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-    &kp K_MUTE  &kp K_PREV  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT   &kp K_MUTE   &kp K_PREV    &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT
-    &none       &none       &none         &bt BT_CLR    &bootloader  &bootloader  &bt BT_CLR    &none         &none         &none
+    &none       &none       &none         &none         &none        &none        &none       &none         &none         &none
+    &kp K_MUTE  &kp K_PREV  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT   &kp K_MUTE   &kp K_PREV  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT
+    &none       &none       &none         &none         &bootloader  &bootloader  &none       &none         &none         &none
                             &trans      &kp K_PP    &kp K_STOP  &kp K_STOP  &kp K_PP    &trans
             >;
         };
@@ -192,6 +194,17 @@
     &trans  &trans  &trans  &trans  &kp TAB  &kp H  &kp J  &kp K      &kp L    &kp SEMI
     &trans  &kp F1  &kp F2  &kp F3  &kp N0   &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH
                     &none          &lt NAV SPACE  &mo GP_L2      &lt SYM RET    &mo GP_L2      &none
+            >;
+        };
+
+        bt_layer {
+            // Hold the extra 6th thumb: z x c v select BT profiles 0-3,
+            // b clears the bonds of the current profile.
+            bindings = <
+    &none         &none         &none         &none         &none       &none  &none  &none  &none  &none
+    &none         &none         &none         &none         &none       &none  &none  &none  &none  &none
+    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR  &none  &none  &none  &none  &none
+                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
