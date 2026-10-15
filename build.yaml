@@ -13,9 +13,15 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  # HWMv2 (Zephyr 4.1): nice_nano_v2 is now nice_nano (default revision 2.0.0)
+  # with the zmk board variant. artifact-name keeps the old nice_nano_v2 names
+  # so filenames stay stable alongside the firmware/ directory.
+  - board: nice_nano//zmk
     shield: skeletyl_left
-  - board: nice_nano_v2
+    artifact-name: skeletyl_left-nice_nano_v2-zmk
+  - board: nice_nano//zmk
     shield: skeletyl_right
-  - board: nice_nano_v2
+    artifact-name: skeletyl_right-nice_nano_v2-zmk
+  - board: nice_nano//zmk
     shield: settings_reset
+    artifact-name: settings_reset-nice_nano_v2-zmk
