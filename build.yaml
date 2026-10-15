@@ -23,5 +23,11 @@ include:
     shield: skeletyl_right
     artifact-name: skeletyl_right-nice_nano_v2-zmk
   - board: nice_nano//zmk
+    shield: cygnus_left
+    artifact-name: cygnus_left-nice_nano_v2-zmk
+  - board: nice_nano//zmk
+    shield: cygnus_right
+    artifact-name: cygnus_right-nice_nano_v2-zmk
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset-nice_nano_v2-zmk
