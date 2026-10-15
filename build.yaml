@@ -17,3 +17,5 @@ include:
     shield: skeletyl_left
   - board: nice_nano_v2
     shield: skeletyl_right
+  - board: nice_nano_v2
+    shield: settings_reset
