@@ -7,8 +7,9 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
-// Cygnus keymap: skeletyl keymap evolved with layouts ported from the QMK
-// charybdis keymap (bk_qmk_userspace .../charybdis/3x5/keymaps/michalvanko):
+// Cygnus keymap: ported from the QMK charybdis keymap
+// (bk_qmk_userspace .../charybdis/3x5/keymaps/michalvanko), which is the
+// reference layout — skeletyl stays frozen as an archive:
 // - QMK combos: Q+P -> colemak, Q+; -> qwerty
 // - gamepad layers (base / L1 / L2) with combo + keys to toggle on/off
 // - mouse (pointer) layer on Z and /, like QMK POINTER_MOD:
@@ -109,10 +110,10 @@
 
         nav_layer {
             bindings = <
-    &none     &none     &none      &none       &tog GAMEPAD  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none         &kp CAPS    &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT
-    &none     &none     &none      &none       &none         &kp INS     &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
-                        &trans  &trans  &trans  &trans  &trans  &trans
+    &none     &none     &none      &none       &tog GAMEPAD  &kp K_APP  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none         &kp CAPS   &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT
+    &none     &none     &none      &none       &tog GAMEPAD  &kp INS    &kp HOME     &kp PG_DN   &kp PG_UP  &kp END
+                        &none    &trans   &none    &kp RET  &kp DEL  &trans
             >;
         };
 
@@ -121,7 +122,7 @@
     &kp LBKT   &kp N7  &kp N8  &kp N9  &kp RBKT   &none  &none       &none      &none     &tog GAMEPAD
     &kp SQT    &kp N4  &kp N5  &kp N6  &kp EQUAL  &none  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
     &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH   &none  &none       &none      &none     &tog GAMEPAD
-                       &kp DOT    &kp N0     &kp MINUS  &trans     &trans     &trans
+                       &kp DOT    &kp N0     &kp MINUS  &none      &none      &trans
             >;
         };
 
@@ -141,25 +142,25 @@
     &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC  &none  &none       &none      &none     &tog GAMEPAD
     &kp DQT    &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none  &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
     &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE  &none  &none       &none      &none     &tog GAMEPAD
-                         &kp LPAR   &kp RPAR   &kp UNDER  &trans     &trans     &trans
+                         &kp LPAR   &kp RPAR   &kp UNDER  &trans     &none      &trans
             >;
         };
 
         media_layer {
             bindings = <
-    &none     &none     &none      &none       &none  &none       &none         &none         &none         &none
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none  &none       &kp K_PREV    &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT
-    &none     &none     &none      &none       &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-                        &trans      &trans      &trans      &kp K_STOP  &kp K_PP    &kp K_MUTE
+    &none       &none       &none         &none         &none        &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
+    &kp K_MUTE  &kp K_PREV  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT   &kp K_MUTE   &kp K_PREV    &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT
+    &none       &none       &none         &bt BT_CLR    &bootloader  &bootloader  &bt BT_CLR    &none         &none         &none
+                            &trans      &kp K_PP    &kp K_STOP  &kp K_STOP  &kp K_PP    &trans
             >;
         };
 
         fun_layer {
             bindings = <
-    &kp F12  &kp F7  &kp F8  &kp F9  &tog GAMEPAD     &kp PSCRN  &none       &none      &none     &none
-    &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK         &none      &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LGUI
-    &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &none      &none       &none      &none     &none
-                     &kp K_APP  &kp SPACE  &kp TAB    &trans     &trans     &trans
+    &none     &none     &none      &none       &tog GAMEPAD  &kp PSCRN        &kp F7  &kp F8  &kp F9  &kp F12
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none         &kp SLCK         &kp F4  &kp F5  &kp F6  &kp F11
+    &none     &none     &none      &none       &tog GAMEPAD  &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10
+                        &none   &none   &trans  &none   &none   &trans
             >;
         };
 
