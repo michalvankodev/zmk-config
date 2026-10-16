@@ -44,8 +44,8 @@ SPEC = {
         "default": None,
         0: "&kp Q", 1: "&kp W", 2: "&kp E", 3: "&kp R", 4: "&kp T",
         5: "&kp Y", 6: "&kp U", 7: "&kp I", 8: "&kp O", 9: "&kp P",
-        10: "&hmp LGUI A", 11: "&hm LALT S", 12: "&hm LCTRL D", 13: "&hm LSHIFT F", 14: "&kp G",
-        15: "&kp H", 16: "&hm LSHIFT J", 17: "&hm LCTRL K", 18: "&hm LALT L", 19: "&hmp LGUI SEMI",
+        10: "&hm LGUI A", 11: "&hm LALT S", 12: "&hm LCTRL D", 13: "&hm LSHIFT F", 14: "&kp G",
+        15: "&kp H", 16: "&hm LSHIFT J", 17: "&hm LCTRL K", 18: "&hm LALT L", 19: "&hm LGUI SEMI",
         20: "&lt MOUSE Z", 21: "&kp X", 22: "&kp C", 23: "&kp V", 24: "&kp B",
         25: "&kp N", 26: "&kp M", 27: "&kp COMMA", 28: "&kp DOT", 29: "&lt MOUSE FSLH",
         30: THUMB_BASE[0], 31: THUMB_BASE[1], 32: THUMB_BASE[2],
@@ -55,8 +55,8 @@ SPEC = {
         "default": None,
         0: "&kp Q", 1: "&kp W", 2: "&kp F", 3: "&kp P", 4: "&kp G",
         5: "&kp J", 6: "&kp L", 7: "&kp U", 8: "&kp Y", 9: "&kp SEMI",
-        10: "&hmp LGUI A", 11: "&hm LALT R", 12: "&hm LCTRL S", 13: "&hm LSHIFT T", 14: "&kp D",
-        15: "&kp H", 16: "&hm LSHIFT N", 17: "&hm LCTRL E", 18: "&hm LALT I", 19: "&hmp LGUI O",
+        10: "&hm LGUI A", 11: "&hm LALT R", 12: "&hm LCTRL S", 13: "&hm LSHIFT T", 14: "&kp D",
+        15: "&kp H", 16: "&hm LSHIFT N", 17: "&hm LCTRL E", 18: "&hm LALT I", 19: "&hm LGUI O",
         20: "&lt MOUSE Z", 21: "&kp X", 22: "&kp C", 23: "&kp V", 24: "&kp B",
         25: "&kp K", 26: "&kp M", 27: "&kp COMMA", 28: "&kp DOT", 29: "&lt MOUSE FSLH",
         30: THUMB_BASE[0], 31: THUMB_BASE[1], 32: THUMB_BASE[2],
@@ -185,8 +185,7 @@ COMBOS = {
 }
 
 BEHAVIORS = {
-    "hm": {"tapping-term-ms": "200", "flavor": '"balanced"'},
-    "hmp": {"tapping-term-ms": "250", "flavor": '"tap-preferred"'},
+    "hm": {"tapping-term-ms": "200", "flavor": '"tap-preferred"'},
 }
 
 # ---------------------------------------------------------------------------
