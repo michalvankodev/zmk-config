@@ -86,15 +86,16 @@ SPEC = {
         30: "&kp DOT", 31: "&kp N0", 32: "&kp MINUS", 33: "&none", 34: "&trans",
         35: "&trans",
     },
-    # Contract overrides QMK pointer layer (cygnus has no trackball):
-    # n=MOVE_LEFT u=MOVE_UP i=MOVE_RIGHT ,=MOVE_DOWN; scroll on j k l ;;
-    # LCLK/RCLK/MCLK on the right thumbs; left thumbs &trans.
+    # Mouse layer, Colemak labels (2026 session decision, supersedes the QMK
+    # pointer-layer port): move diamond u=MOVE_UP ,=MOVE_DOWN n=MOVE_LEFT
+    # o=MOVE_RIGHT; scroll m/e/i// = SCRL left/down/up/right (e,i match nav
+    # arrows); LCLK/RCLK/MCLK on the right thumbs; left thumbs &trans.
     "mouse": {
         "default": "&none",
-        6: "&mmv MOVE_UP", 7: "&mmv MOVE_RIGHT",
+        7: "&mmv MOVE_UP",
         10: "&kp LGUI", 11: "&kp LALT", 12: "&kp LCTRL", 13: "&kp LSHIFT",
-        16: "&msc SCRL_LEFT", 17: "&msc SCRL_DOWN", 18: "&msc SCRL_UP", 19: "&msc SCRL_RIGHT",
-        25: "&mmv MOVE_LEFT", 27: "&mmv MOVE_DOWN",
+        16: "&mmv MOVE_LEFT", 17: "&msc SCRL_DOWN", 18: "&msc SCRL_UP", 19: "&mmv MOVE_RIGHT",
+        26: "&msc SCRL_LEFT", 27: "&mmv MOVE_DOWN", 29: "&msc SCRL_RIGHT",
         30: "&trans", 31: "&trans", 32: "&trans",
         33: "&mkp LCLK", 34: "&mkp RCLK", 35: "&mkp MCLK",
     },

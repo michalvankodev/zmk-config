@@ -13,7 +13,7 @@
 // - QMK combos: Q+P -> colemak, Q+; -> qwerty
 // - gamepad layers (base / L1 / L2) with combo + keys to toggle on/off
 // - mouse (pointer) layer on Z and /, like QMK POINTER_MOD:
-//     n = left, u = up, i = right, , = down
+//     n = left, u = up, i = right, , = down  (QMK reference, QWERTY labels)
 // - tap the extra 6th thumb (charybdis keymap only used 5) for DEL; hold it
 //   for the BT layer (profile select on z x c v, clear bonds on b)
 
@@ -122,12 +122,13 @@
         };
 
         mouse_layer {
-            // Hold Z (or /) to activate; move with n=left u=up i=right ,=down.
-            // Scrolling on j k l ; (skeletyl muscle memory position).
+            // Hold Z (or /) to activate. Colemak labels:
+            // move diamond: u=up ,=down n=left o=right
+            // scroll:       m=left e=down i=up /=right
             bindings = <
-    &none     &none     &none      &none       &none  &none           &mmv MOVE_UP    &mmv MOVE_RIGHT  &none         &none
-    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none  &none           &msc SCRL_LEFT  &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT
-    &none     &none     &none      &none       &none  &mmv MOVE_LEFT  &none           &mmv MOVE_DOWN   &none         &none
+    &none     &none     &none      &none       &none  &none  &none  &mmv MOVE_UP  &none  &none
+    &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none  &none  &mmv MOVE_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &mmv MOVE_RIGHT
+    &none     &none     &none      &none       &none  &none  &msc SCRL_LEFT  &mmv MOVE_DOWN  &none  &msc SCRL_RIGHT
                         &trans     &trans     &trans     &mkp LCLK  &mkp RCLK  &mkp MCLK
             >;
         };
