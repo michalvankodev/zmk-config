@@ -13,8 +13,8 @@
         ; 
     col-gpios
         = <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // col5
-        , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // col6 (swapped with col7: handwire crosses these two wires)
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // col7 (swapped with col6)
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // col6
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // col7
         , <&pro_micro 14 (GPIO_ACTIVE_HIGH)> // col8
         , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // col9
         ;
