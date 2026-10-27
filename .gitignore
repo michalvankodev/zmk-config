@@ -1,0 +1,5 @@
+# manually kept local UF2 copies (refreshed from CI artifacts, never built locally)
+firmware/
+
+# pi session artifacts
+.pi/
